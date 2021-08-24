@@ -21,9 +21,11 @@ export default function orderByProps(obj, keys = ['name', 'level']) {
   });
 
   for (const item in keys) {
-    const key = keys[item];
-    const value = obj[key];
-    newArray.push({ key, value });
+    if (item) {
+      const key = keys[item];
+      const value = obj[key];
+      newArray.push({ key, value });
+    }
   }
 
   return newArray;
